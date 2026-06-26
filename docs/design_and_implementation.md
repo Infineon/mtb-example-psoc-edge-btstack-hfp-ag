@@ -12,6 +12,8 @@ Project | Description
 *proj_cm33_ns* | Project for CM33 non-secure processing environment (NSPE)
 *proj_cm55* | CM55 project
 
+> **Note:** For KIT_PSE84_HMI, a custom *design.modus* file is provided (under *templates* folder) as the PWM connection to the RGB LED is not enabled in the default BSP configuration.
+
 <br>
 
 In this code example, at device reset, the secure boot process starts from the ROM boot with the secure enclave (SE) as the root of trust (RoT). From the secure enclave, the boot flow is passed on to the system CPU subsystem, where the secure CM33 application starts. After all necessary secure configurations, the flow is passed on to the non-secure CM33 application. Resource initialization for this example is performed by this CM33 non-secure project. It configures the system clocks, pins, clock to peripheral connections, and other platform resources. It then enables the CM55 core using the `Cy_SysEnableCM55()` function.
